@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基础知识练习</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+
+        .output {
+            background-color: #e8f5e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript基础知识练习</h1>
+
+        <div class="section">
+            <h2>1. 变量的定义</h2>
+            <div class="output" id="varOutput"></div>
+        </div>
+
+        <div class="section">
+            <h2>2. 变量类型</h2>
+            <div class="output" id="typeOutput"></div>
+        </div>
+
+        <div class="section">
+            <h2>3. 表达式</h2>
+            <div class="output" id="exprOutput"></div>
+        </div>
+
+        <div class="section">
+            <h2>4. 流程控制</h2>
+            <div class="output" id="flowOutput"></div>
+        </div>
+
+        <div class="section">
+            <h2>5. 函数</h2>
+            <div class="output" id="funcOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 变量的定义
+        let name = "张三";
+        var age = 20;
+        const PI = 3.14159;
+
+        document.getElementById('varOutput').innerHTML =
+            `变量name: ${name}<br>` +
+            `变量age: ${age}<br>` +
+            `常量PI: ${PI}`;
+
+        // 2. 变量类型
+        let str = "字符串";
+        let num = 123;
+        let bool = true;
+        let arr = [1, 2, 3];
+        let obj = { name: "李四", age: 25 };
+        let undef;
+        let nul = null;
+
+        document.getElementById('typeOutput').innerHTML =
+            `字符串类型: ${typeof str}<br>` +
+            `数字类型: ${typeof num}<br>` +
+            `布尔类型: ${typeof bool}<br>` +
+            `数组类型: ${typeof arr}<br>` +
+            `对象类型: ${typeof obj}<br>` +
+            `未定义类型: ${typeof undef}<br>` +
+            `空类型: ${typeof nul}`;
+
+        // 3. 表达式
+        let a = 10;
+        let b = 5;
+        let sum = a + b;
+        let difference = a - b;
+        let product = a * b;
+        let quotient = a / b;
+        let remainder = a % b;
+
+        document.getElementById('exprOutput').innerHTML =
+            `a + b = ${sum}<br>` +
+            `a - b = ${difference}<br>` +
+            `a * b = ${product}<br>` +
+            `a / b = ${quotient}<br>` +
+            `a % b = ${remainder}`;
+
+        // 4. 流程控制
+        let score = 85;
+        let grade;
+
+        if (score >= 90) {
+            grade = "A";
+        } else if (score >= 80) {
+            grade = "B";
+        } else if (score >= 70) {
+            grade = "C";
+        } else {
+            grade = "D";
+        }
+
+        let numbers = [1, 2, 3, 4, 5];
+        let evenNumbers = [];
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 === 0) {
+                evenNumbers.push(numbers[i]);
+            }
+        }
+
+        document.getElementById('flowOutput').innerHTML =
+            `分数: ${score}, 等级: ${grade}<br>` +
+            `数组中的偶数: ${evenNumbers.join(", ")}`;
+
+        // 5. 函数
+        function add(x, y) {
+            return x + y;
+        }
+
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        document.getElementById('funcOutput').innerHTML =
+            `add(5, 3) = ${add(5, 3)}<br>` +
+            `greet("王五") = ${greet("王五")}<br>` +
+            `factorial(5) = ${factorial(5)}`;
+    </script>
+</body>
+
+</html>
